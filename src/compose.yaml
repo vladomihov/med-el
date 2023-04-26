@@ -1,0 +1,25 @@
+name: medel-exercise
+services:
+  # web:
+  #   image: medel-api:1.0.0
+  #   ports:
+  #     - 5010:80
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - Serilog__WriteTo__0__Args__serverUrl=http://logs:80
+
+  logs:
+    image: datalust/seq:latest
+    ports:
+      - 5341:80
+    environment:
+      - ACCEPT_EULA=Y
+
+  db:
+    image: "postgres"
+    environment:
+      - "POSTGRES_PASSWORD=pass"
+    networks:
+      - "default"
+    ports:
+      - "5433:5432"
