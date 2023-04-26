@@ -7,6 +7,10 @@
 - MedEl.UnitTests - contains the unit tests of the service
 - docker compose - responsible for the instantiation of the required services
 
+## Prerequisites
+- net7
+- Docker Desktop (for Windows)
+
 ## How to run
 
 1. navigate to the 'src' folder
@@ -14,6 +18,10 @@
 1. run the following command to spin up the required services
     ```
     docker compose up -d
+    ```
+1. if you plan to use HTTPS, you need to make sure the cert is trusted
+    ```
+    dotnet dev-certs https --trust
     ```
 1. run the following command to build and run the app (or use VSCode to open the 'src' folder and run from there)
     ```
